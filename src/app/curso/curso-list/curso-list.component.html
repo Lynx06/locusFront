@@ -1,0 +1,27 @@
+<div class="content table-responsive table-bigboy">
+  <table class="table table-hover table-striped">
+      <thead>
+          <tr>
+              <!-- <th *ngFor="let curso of cursoService.title">{{ curso.title }}</th> -->
+              <th>Id</th>
+              <th>Nome Curso</th>
+              <th>Editar - Excluir</th>
+          </tr>
+      </thead>
+      <tbody>
+          <tr *ngFor="let curso of cursoService.cursoList">
+              <!-- <td *ngFor="let cell of row">{{cell}}</td> -->
+              <td>{{curso.idCurso}}</td>
+              <td>{{curso.nome_curso}}</td>
+              <td>
+                <a class="btn btn-info" (click)="showForEdit(curso)">
+                  <i class="pe-7s-note"></i>
+                </a>
+                <a class="btn btn-danger" (click)="onDelete(curso.idCurso)">
+                    <i class="pe-7s-trash"></i>
+                </a>
+              </td>
+          </tr>
+      </tbody>
+  </table>
+</div>
