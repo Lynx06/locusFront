@@ -5,12 +5,14 @@
               <div class="card">
                   <div class="content">
                       <form class="emp-form" #cursoForm="ngForm" (ngSubmit)="onSubmit(cursoForm)">
+                          <input type="hidden" name="idCurso" #idCurso="ngModel" [(ngModel)]="cursoService.selectedCurso.idCurso">
                           <div class="form-row">
                               <div class="col-md-12">
                                   <div class="form-group">
                                       <label>Nome Curso</label>
-                                      <input class="form-control" name="nome_curso" placeholder="Insira o Curso" #NomeCurso="ngModel" [(ngModel)]="cursoService.selectedCurso.nome_curso">
-                                  </div>
+                                      <input class="form-control" name="nome_curso" #NomeCurso="ngModel" [(ngModel)]="cursoService.selectedCurso.nome_curso" placeholder="Insira o Curso" required>
+                                        <div class="validation-error" style="color: red" *ngIf="NomeCurso.invalid && NomeCurso.touched">Este Campo é Obrigatório</div>
+                                   </div>
                               </div>
                           </div>
                           <div class="form-row">

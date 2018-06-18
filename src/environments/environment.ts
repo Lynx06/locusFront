@@ -7,7 +7,7 @@ export const environment = {
   production: false,
 
   // Routes Curso
-  apiGetCurso: "",
+  apiGetCurso: "https://jsonplaceholder.typicode.com/posts/",
   apiPostCurso: "",
   apiPutCurso: "",
   apiDeleteCurso: "",

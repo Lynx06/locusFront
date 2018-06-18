@@ -27,8 +27,16 @@ export class CursoCreateComponent implements OnInit {
   }
 
   onSubmit(form: NgForm){
+    if(form.value.idCurso == null){
     this.cursoService.postCurso(form.value).subscribe(data =>{
       this.resetForm(form);
+      this.cursoService.getCursoList();
     });
+  } else { 
+      this.cursoService.putCurso(form.value.idCurso, form.value).subscribe(data => {
+        this.resetForm(form);
+        this.cursoService.getCursoList();
+      });
+    }
   }
 }
